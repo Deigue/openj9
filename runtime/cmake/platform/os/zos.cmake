@@ -24,13 +24,3 @@ set(CMAKE_SHARED_LIBRARY_SUFFIX ".so")
 set(CMAKE_SHARED_LIBRARY_PREFIX "lib")
 
 set(CMAKE_IMPORT_LIBRARY_PREFIX "lib")
-<<<<<<< HEAD
-=======
-
-if(${OMR_TOOLCONFIG} STREQUAL "xlc")
-	list(APPEND OMR_PLATFORM_COMPILE_OPTIONS
-		"\"-Wc,inline(auto,noreport,600,5000)\""
-		"\"-Wc,list(),offset,gonumber\""
-	)
-endif()
->>>>>>> b732a5514c (Initial toolchain changes for Open XL zos)
