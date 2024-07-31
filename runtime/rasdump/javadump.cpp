@@ -21,7 +21,6 @@
  *******************************************************************************/
 
 /* Includes */
-#include <stdlib.h>
 #if defined(AIXPPC)
 #include <sys/time.h>
 #endif /* defined(AIXPPC) */
@@ -31,8 +30,6 @@
 #include <malloc.h>
 #elif defined(LINUX) || defined(AIXPPC)
 #include <alloca.h>
-#elif defined(J9ZOS390)
-#include <stdlib.h>
 #endif
 #if defined(J9ZTPF)
 #include <sys/mman.h>
