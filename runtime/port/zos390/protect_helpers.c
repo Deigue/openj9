@@ -25,8 +25,13 @@
 #include <sys/mman.h>
 #include <errno.h>
 
+<<<<<<< HEAD
 extern intptr_t _MPROT(uintptr_t address, uintptr_t length); /* j9mprotect.s */
 extern intptr_t _MUNPROT(uintptr_t address, uintptr_t length); /* j9munprotect.s */
+=======
+extern intptr_t _MPROT(uintptr_t address, uintptr_t length);
+extern intptr_t _MUNPROT(uintptr_t address, uintptr_t length);
+>>>>>>> c798bb4319 (PR19906: PR fixes, cleanup and formatting.)
 
 /**
  * @internal @file
@@ -46,11 +51,9 @@ protect_memory(struct J9PortLibrary *portLibrary, void *address, uintptr_t lengt
 
 	if ((flags & OMRPORT_PAGE_PROTECT_WRITE) == 0) {
 		/*omrtty_printf(portLibrary,"Calling _MPROT addr=%d length=%d\n",address,length);*/
-		extern intptr_t _MPROT(uintptr_t address, uintptr_t length);
 		rc = _MPROT((uintptr_t)address, ((uintptr_t)address) + length - 1); /*flags 0=prot 1=unprot */
 	} else {
 		/*omrtty_printf(portLibrary,"Calling _MUNPROT addr=%d length=%d\n",address,length);*/
-		extern intptr_t _MUNPROT(uintptr_t address, uintptr_t length);
 		rc = _MUNPROT((uintptr_t)address, ((uintptr_t)address) + length - 1); /*flags 0=prot 1=unprot */
 	}
 
