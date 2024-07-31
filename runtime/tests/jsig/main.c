@@ -19,12 +19,6 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
  *******************************************************************************/
-#if defined(WIN32)
-#include <windows.h>
-#else /* defined(WIN32) */
-#include <dlfcn.h>
-#endif /* defined(WIN32) */
-
 #if defined(J9ZOS390)
 #include <dll.h>
 #include "atoe.h"
@@ -32,6 +26,12 @@
 #define dlopen(a, b) dllload(a)
 #define dlclose dllfree
 #endif /* defined(J9ZOS390) */
+
+#if defined(WIN32)
+#include <windows.h>
+#else /* defined(WIN32) */
+#include <dlfcn.h>
+#endif /* defined(WIN32) */
 
 #include <errno.h>
 #include <setjmp.h>
