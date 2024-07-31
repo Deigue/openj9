@@ -831,8 +831,9 @@ ifdef({ASM_J9VM_JIT_32BIT_USES64BIT_REGISTERS},{dnl
 
 ifdef({J9ZOS390},{dnl
 ifdef({TR_HOST_64BIT},{dnl
+
 ZZ 64bit XPLINK doesn't need call descriptors
-    END
+
 },{dnl
 ZZ Call Descriptor for call to jitMathHelperFloatRemainderFloat
 LCALLDESCFRM      DS    0D           * Dword Boundary
