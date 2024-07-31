@@ -61,12 +61,13 @@ set(compile_flags_to_remove
 	"-m64"
 )
 
-# Flags to be appended while compiling
+if(OMR_TOOLCONFIG STREQUAL "openxl")
 set(compile_flags_to_append
 	"-m32n"
 	"-mzos-float-kind=ieee"
 	"-Wno-c++11-narrowing"
-)	
+)
+endif()
 
 foreach(flag IN LISTS compile_flags_to_remove)
 	omr_remove_flags(CMAKE_C_FLAGS "${flag}")
