@@ -21,10 +21,10 @@
 ################################################################################
 
 list(APPEND OMR_PLATFORM_COMPILE_OPTIONS
-		-O3
-		"\"-Wc,inline(auto,noreport,600,5000)\""
-		"\"-Wc,list(),offset,gonumber\""
-	)
+	-O3
+	"\"-Wc,inline(auto,noreport,600,5000)\""
+	"\"-Wc,list(),offset,gonumber\""
+)
 
 list(APPEND OMR_PLATFORM_CXX_COMPILE_OPTIONS -qnortti)
 

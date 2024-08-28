@@ -20,11 +20,12 @@
 # SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 ################################################################################
 
-list(APPEND OMR_PLATFORM_COMPILE_OPTIONS -O3)
+list(APPEND OMR_PLATFORM_COMPILE_OPTIONS
+	-O3
+	-fstack-protector
+)
 
 list(APPEND OMR_PLATFORM_CXX_COMPILE_OPTIONS -fno-rtti)
-
-list(APPEND OMR_PLATFORM_COMPILE_OPTIONS -fstack-protector)
 
 if(NOT OMR_OS_ZOS)
 	list(APPEND OMR_PLATFORM_CXX_COMPILE_OPTIONS -qsuppress=1540-1087:1540-1088:1540-1090)
