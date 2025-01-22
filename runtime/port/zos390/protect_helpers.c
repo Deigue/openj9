@@ -25,18 +25,8 @@
 #include <sys/mman.h>
 #include <errno.h>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 extern intptr_t _MPROT(uintptr_t address, uintptr_t length); /* j9mprotect.s */
 extern intptr_t _MUNPROT(uintptr_t address, uintptr_t length); /* j9munprotect.s */
-=======
-extern intptr_t _MPROT(uintptr_t address, uintptr_t length);
-extern intptr_t _MUNPROT(uintptr_t address, uintptr_t length);
->>>>>>> c798bb4319 (PR19906: PR fixes, cleanup and formatting.)
-=======
-extern intptr_t _MPROT(uintptr_t address, uintptr_t length); /* j9mprotect.s */
-extern intptr_t _MUNPROT(uintptr_t address, uintptr_t length); /* j9munprotect.s */
->>>>>>> 715e1a5654 (Open XL implicit function declaration fixes)
 
 /**
  * @internal @file
